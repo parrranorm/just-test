@@ -1,0 +1,83 @@
+
+body {
+    background-color: rgb(201, 188, 188);
+    font-family: Tahoma;
+}
+    .main_div{
+        background-color: white;
+        border-style: solid;
+        border-color: lightgray;
+        border-width: 1px;
+        border-radius: 20px;
+        margin-left:100px;
+        margin-right:100px;
+        padding: 10px;
+
+        display: none;
+    }
+
+    #question_number{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color:gray
+    }
+
+    #question {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 22px;
+    }
+
+    #answers {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 20px;
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+
+    .test_button {
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 16px;
+        border-radius: 8px;
+        border-width: 0px;
+        background-color: rgb(184, 128, 83);
+        color: white;
+        padding: 10px;
+
+        width: 100%;
+        float: left;
+        box-sizing: border-box;
+        
+        cursor:pointer;
+    }
+
+    .answer_button{
+        font-size: 16px;
+        border-style: solid;
+        border-radius: 8px;
+        border-width: 1px;
+        border-color: lightgray;
+        padding: 10px;
+        background-color: white;
+        margin-bottom: 10px;
+
+        width: 100%;
+        float: left;
+        box-sizing: border-box;
+        
+        cursor:pointer;
+    }
+
+    .next_div{
+        overflow: hidden;
+    }
+
+    .result_div{
+        font-size: 26px;
+        border-style: solid;
+        border-radius: 8px;
+        border-width: 3px;
+        border-color: lightgray;
+        background-color: white;
+        padding: 10px;
+
+        visibility: hidden;
+    }

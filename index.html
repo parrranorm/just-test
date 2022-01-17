@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Интерактивный тест</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="OnLoad()">
+    <div id="start_div">
+        <p id="start_text"></p>
+        <button id="run_button" class="test_button" onclick="RunTest()">НАЧАТЬ ТЕСТ</button>
+    </div>
+    <div id="main_div" class="main_div">
+        <p id="question_number"></p>
+        <p id="question"></p>
+        <div id="answers">
+            <button id="answer1" class="answer_button" onclick="OnAnswer(0)"></button>
+            <button id="answer2" class="answer_button" onclick="OnAnswer(1)"></button>
+            <button id="answer3" class="answer_button" onclick="OnAnswer(2)"></button>
+            <button id="answer4" class="answer_button" onclick="OnAnswer(3)"></button>
+        </div>
+        <div class="next_div">
+            <button id="next_button" class="test_button" onclick="OnNext()">ДАЛЬШЕ</button>
+        </div>
+    </div>
+    <div id="result_div" class="result_div">
+        <p id="result"></p>
+        <p id="result_text"></p>
+    </div>
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>
