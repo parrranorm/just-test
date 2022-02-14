@@ -152,7 +152,7 @@ function ShowResult() {
     if (data.Result[i].Image) {
         var dir = data.TestName ? data.TestName : ""
         var file = "/images/" + dir + "/" + data.Result[i].Image;
-        document.getElementById("result_div").style.backgroundImage = "url(/just_test/" + file + ")";
+        document.getElementById("result_div").style.backgroundImage = "url(/just_test" + file + ")";
     }
 
 }
