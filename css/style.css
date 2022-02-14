@@ -11,8 +11,8 @@ body {
         border-radius: 20px;
         margin-left:100px;
         margin-right:100px;
+        align-items: center;
         padding: 10px;
-
         display: none;
     }
 
@@ -71,13 +71,15 @@ body {
     }
 
     .result_div{
-        font-size: 26px;
+        font-size: 35px;
         border-style: solid;
-        border-radius: 8px;
-        border-width: 3px;
-        border-color: lightgray;
-        background-color: white;
-        padding: 10px;
+        border-radius: 10px;
+        border-width: 5px;
+        border-color: rgb(131, 118, 118);
+        background-color: rgb(255, 255, 255);
+        padding: 15px;
+        background: #c7b39b url(/images/default_result.png) no-repeat;
+        background-size: 100%;
 
         visibility: hidden;
     }

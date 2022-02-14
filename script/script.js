@@ -19,9 +19,12 @@ function readTextFile(file, callback) {
 }
 
 function OnLoad() {
-    readTextFile("json/test.json", function (text) {
+    readTextFile("json/valentin_test.json", function (text) {
         data = JSON.parse(text);
         document.getElementById("start_text").innerHTML = data.StartText;
+        var dir = data.TestName ? data.TestName : ""
+        var image = data.StartImage ? data.StartImage : "default.png";
+        document.getElementById("start_image").src = "images/" + dir + "/" + image;
     });
 }
 
@@ -145,6 +148,13 @@ function ShowResult() {
         }
 
     document.getElementById("result_text").innerHTML = result_text;
+
+    if (data.Result[i].Image) {
+        var dir = data.TestName ? data.TestName : ""
+        var file = "/images/" + dir + "/" + data.Result[i].Image;
+        document.getElementById("result_div").style.backgroundImage = "url(" + file + ")";
+    }
+
 }
 
 function HideTestBlock() {
