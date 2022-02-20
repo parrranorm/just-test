@@ -22,6 +22,12 @@ function readTextFile(file, callback) {
 
 function OnLoad() {
     HideResultBlock();
+
+    // var test_name = "json/test.json";
+    // readTextFile(test_name, function (text) {
+    //     data = JSON.parse(text);
+    //     ShowResult();
+    // });
 }
 
 function RunTest(test_id) {
@@ -168,10 +174,19 @@ function ShowResult() {
 
     document.getElementById("result_text").innerHTML = result_text;
 
+    var file = "/images/default_result.png";
     if (data.Result[i].Image) {
         var dir = data.TestName ? data.TestName : ""
         var file = "/images/" + dir + "/" + data.Result[i].Image;
-        document.getElementById("result_div").style.backgroundImage = "url(/just_test/" + file + ")";
+    }
+
+    document.getElementById("result_div").style.backgroundImage = "url(" + file + ")";
+    var request = new XMLHttpRequest();
+    request.open('GET', file, false);
+    request.send();
+
+    if (request.status == 404) {
+        document.getElementById("result_div").style.backgroundImage = "url(/just-test/" + file + ")";
     }
 
     document.getElementById("return_button").style.display = 'block';
