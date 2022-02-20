@@ -9,9 +9,19 @@
 
 <body onload="OnLoad()">
     <div id="start_div">
-        <p id="start_text"></p>
+        <p class="welcome_text">Добро пожаловать в онлайн систему тестирования Just Test!</p>
+        <p>Проект выполнили ученики 9'А' класса: Петросян Константин и Котельников Иван</p>
         <p><img id="start_image" src="images/default.png"></p>
-        <button id="run_button" class="test_button" onclick="RunTest()">НАЧАТЬ ТЕСТ</button>
+        <p>Доступные тесты:</p>
+        <p class="test_name">Пример теста по информатике для демонстрации работы онлайн системы
+            тестирования
+            <button id="run_button1" class="test_button" onclick="RunTest(0)">НАЧАТЬ ТЕСТ</button>
+        </p>
+
+        <p class="test_name">Шуточный тест по информатике
+            <button id="run_button2" class="test_button" onclick="RunTest(1)">НАЧАТЬ ТЕСТ</button>
+        </p>
+
     </div>
     <div id="main_div" class="main_div">
         <p id="question_number"></p>
@@ -30,6 +40,7 @@
         <p id="result"></p>
         <p id="result_text"></p>
     </div>
+    <button id="return_button" class="test_button" onclick="ReturnToMain()">ВЕРНУТЬСЯ НА ГЛАВНУЮ СТРАНИЦУ</button>
 
     <script src="script/script.js"></script>
 </body>

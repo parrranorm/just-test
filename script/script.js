@@ -4,6 +4,8 @@ var right_answers_count = 0;
 var answers = ['answer1', 'answer2', 'answer3', 'answer4'];
 var right_answer = [false, false, false, false];
 
+var tests = ['test', 'funny_test'];
+
 var data;
 
 function readTextFile(file, callback) {
@@ -19,28 +21,41 @@ function readTextFile(file, callback) {
 }
 
 function OnLoad() {
-    readTextFile("json/valentin_test.json", function (text) {
+    HideResultBlock();
+}
+
+function RunTest(test_id) {
+
+    var test_name = "json/" + tests[test_id] + ".json";
+    readTextFile(test_name, function (text) {
         data = JSON.parse(text);
-        document.getElementById("start_text").innerHTML = data.StartText;
-        var dir = data.TestName ? data.TestName : ""
-        var image = data.StartImage ? data.StartImage : "default.png";
-        document.getElementById("start_image").src = "images/" + dir + "/" + image;
+        right_answers_count = 0;
+        cur_question = -1;
+        NextQuestion();
+
+        HideStartBlock();
+        ShowTestBlock();
+        HideNextButton();
+        HideResultBlock();
+
+        //document.getElementById("start_text").innerHTML = data.StartText;
+        //var dir = data.TestName ? data.TestName : ""
+        //var image = data.StartImage ? data.StartImage : "default.png";
+        //document.getElementById("start_image").src = "images/" + dir + "/" + image;
     });
 }
 
-function RunTest() {
-    right_answers_count = 0;
-    cur_question = -1;
-    NextQuestion();
-
-    HideStartBlock();
-    ShowTestBlock();
+function ReturnToMain() {
+    ShowStartBlock();
+    HideTestBlock();
     HideNextButton();
     HideResultBlock();
+    EnableAnswerButtons(true);
 }
 
 function HideResultBlock() {
     document.getElementById("result_div").style.display = 'none';
+    document.getElementById("return_button").style.display = 'none';
 }
 
 function HideNextButton() {
@@ -49,6 +64,10 @@ function HideNextButton() {
 
 function HideStartBlock() {
     document.getElementById("start_div").style.display = 'none';
+}
+
+function ShowStartBlock() {
+    document.getElementById("start_div").style.display = 'block';
 }
 
 function ShowTestBlock() {
@@ -152,9 +171,10 @@ function ShowResult() {
     if (data.Result[i].Image) {
         var dir = data.TestName ? data.TestName : ""
         var file = "/images/" + dir + "/" + data.Result[i].Image;
-        document.getElementById("result_div").style.backgroundImage = "url(/just-test" + file + ")";
+        document.getElementById("result_div").style.backgroundImage = "url(/just_test/" + file + ")";
     }
 
+    document.getElementById("return_button").style.display = 'block';
 }
 
 function HideTestBlock() {
