@@ -101,6 +101,8 @@ function ShowNextButton() {
     next_button.style.display = 'inline';
     if (cur_question + 1 == data.Questions.length)
         next_button.innerHTML = "ПОКАЗАТЬ РЕЗУЛЬТАТ";
+    else
+        next_button.innerHTML = "ДАЛЬШЕ";
 }
 
 function OnNext() {
